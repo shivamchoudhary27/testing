@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'cd /var/www/'
+                sh 'git pull origin main'
+            }
+        }
+        stage('restart apache 2') {
+            steps {
+                sh 'systemctl restart apache2'
+            }
+        }
+    }
+}
