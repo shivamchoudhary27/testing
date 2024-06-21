@@ -10,7 +10,7 @@ pipeline {
         stage('deploy to remote server') {
             steps {
 	    	sh 'scp /var/lib/jenkins/workspace/moodlelatest/index.html ubuntu@52.66.243.6:'
-                sh 'ssh ubuntu@52.66.243.6 'sudo mv /home/ubuntu/index.html /var/www/html/ && sudo systemctl restart apache2'
+                sh 'ssh ubuntu@52.66.243.6 'sudo mv /home/ubuntu/index.html /var/www/html/ && sudo systemctl restart apache2''
             }
         }
     }
